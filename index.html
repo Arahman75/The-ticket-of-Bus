@@ -31,7 +31,9 @@
 
         <div class="booking-content">
             <h1>Mega City Bus</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.</p>
         </div>
 
 
@@ -41,18 +43,18 @@
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">From</label>
-                    <input class="inp-style" type="text" name="" placeholder="Dhaka">
+                        <input class="inp-style" type="text" name="" placeholder="Dhaka">
                 </div>
                 <div class="input-group">
                     <label" for="">From</label>
-                    <input class="inp-style" type="text" name="" placeholder="Chittagone">
+                        <input class="inp-style" type="text" name="" placeholder="Chittagone">
                 </div>
             </div>
 
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="">
+                        <input class="inp-style" type="date" name="">
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
@@ -61,24 +63,26 @@
             </div>
             <div class="inputs">
                 <div class="input-group f-class">
-                <div>
-                    <label id="ticket-total" for="">First Class ($150)</label>
-                    <input id="ticket-count" class="inp-style inp-width" type="text" value="0">
-                </div>
-                <div class="plus-minus-btn">
-                   <button class="plus-minus-btn" id="increase-btn">+</button>
-                   <button class="plus-minus-btn" id="decrease-btn">-</button>
-                    
-                   
-             </div>
-            </div>
-                <div class="input-group f-class">
                     <div>
-                        <label for="">Economy ($100)</label>
-                        <input class="inp-style inp-width" type="number" name="">
+                        <label id="ticket-total" for="">First Class ($ 150)</label>
+                        <input id="ticket-count" class="inp-style inp-width" type="text" value="0">
                     </div>
                     <div class="plus-minus-btn">
-                        <p> <span>+</span> <span>-</span> </p>
+                        <button class="plus-minus-btn" id="increase-btn">+</button>
+                        <button class="plus-minus-btn" id="decrease-btn">-</button>
+
+
+                    </div>
+                </div>
+                <div class="input-group f-class">
+                    <div>
+                        <label id="e-ticket-total" for="">Economy ($ 100)</label>
+                        <input id="e-ticket-count" class="inp-style inp-width" type="text" value="0">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <button class="plus-minus-btn" id="e-increase-btn">+</button>
+                        <button class="plus-minus-btn" id="e-decrease-btn">-</button>
+                        
                     </div>
                 </div>
 
@@ -117,14 +121,41 @@
 
     <!--Thank You-->
     <script>
-        document.getElementById('increase-btn').addEventListener('click',function(){
-           const ticketInput = document.getElementById('ticket-count');
-           const ticketCount = parseInt(ticketInput.value);
-           const ticketNewCount = ticketCount + 1;
-           ticketInput.value = ticketNewCount;
-           const ticketTotal = ticketNewCount * 150;
-            document.getElementById('ticket-total').innerText = ticketTotal;
+        //first class ticket
+        document.getElementById('increase-btn').addEventListener('click', function () {
+            const ticketInput = document.getElementById('ticket-count');
+            const ticketCount = parseInt(ticketInput.value);
+            const ticketNewCount = ticketCount + 1;
+            ticketInput.value = ticketNewCount;
+            const ticketTotal = ticketNewCount * 150;
+            document.getElementById('ticket-total').innerText = '$' + ' ' + ticketTotal;
         })
+        document.getElementById('decrease-btn').addEventListener('click', function () {
+            const ticketInput = document.getElementById('ticket-count');
+            const ticketCount = parseInt(ticketInput.value);
+            const ticketNewCount = ticketCount - 1;
+            ticketInput.value = ticketNewCount;
+            const ticketTotal = ticketNewCount * 150;
+            document.getElementById('ticket-total').innerText = '$' + ' ' + ticketTotal;
+        })
+        //Economy class ticket
+        document.getElementById('e-increase-btn').addEventListener('click',function(){
+            const eTicketInput = document.getElementById('e-ticket-count');
+            const eTicketCount = parseInt(eTicketInput.value);
+            const eTicketNewCount = eTicketCount + 1;
+            eTicketInput.value = eTicketNewCount;
+            const eTicketTotal = eTicketNewCount * 100;
+            document.getElementById('e-ticket-total').innerText = '$' + ' ' + eTicketTotal;
+        })
+        document.getElementById('e-decrease-btn').addEventListener('click', function(){
+            const eTicketInput = document.getElementById('e-ticket-count');
+            const eTicketCount = parseInt(eTicketInput.value);
+            const eTicketNewCount = eTicketCount -1;
+            eTicketInput.value = eTicketNewCount;
+            const eTicketTotal = eTicketNewCount * 100;
+            document.getElementById('e-ticket-total').innerText = '$' + ' ' + eTicketTotal;
+        })
+
     </script>
 </body>
 
